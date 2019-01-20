@@ -14,15 +14,16 @@ const autoprefixer = require('autoprefixer');
 module.exports = {
 
   entry:{
-      index: './src/js/index.js',//,'./src/scss/style.sass']
-      style: './src/sass/style.sass'
+      index: ['./src/js/index.js',/*'./src/sass/style.sass'*/]
+      //style: './src/sass/style.sass'
   },
 
 
   output: {
-      path: path.resolve(__dirname, 'dist/js/'),
+      path: path.resolve(__dirname, 'dist'),
       filename: '[name].[hash].bandle.js',
-      chunkFilename: '[name].[hash].bandle.js',
+    //  chunkFilename: '[name].[hash].bandle.js',
+      publicPath: '/'
   },
 
 
@@ -33,7 +34,7 @@ module.exports = {
         path.resolve(__dirname, 'src/fonts') //?????
       ],
 
-    extensions: [ '.js', '.css', '.cass']
+    extensions: [ '.js', '.css', '.sass']
   },
 
 
@@ -71,9 +72,13 @@ module.exports = {
 
             /* for SASS*/
         {
-          test: /\.sass$/,
+          test: /\.(sass|scss)$/,
+          exclude: /(node_modules)/,
           use: [
-              MiniCssExtractPlugin.loader,
+                {
+                  loader: 'style-loader'
+                },
+          //  MiniCssExtractPlugin.loader,
 
               {
                 loader: 'css-loader',
@@ -99,6 +104,22 @@ module.exports = {
           ]
         },
 
+        {
+          test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+          use: [{
+              loader: 'file-loader',
+              options: {
+              name: '[name].[ext]',
+              outputPath: './fonts/',
+              }
+          }]
+        },
+
+        {
+          test: /\.css$/,
+          exclude: /(sass)/,
+          use: [ 'style-loader', 'css-loader']
+        },
 
         {
           test: /\.(png|gif|jpg|jpeg)$/,
@@ -106,7 +127,7 @@ module.exports = {
             {
               loader: 'file-loader',
               options: {
-                name: '/img/[name].[hash].[ext]'
+                name: './img/[name].[hash].[ext]'
               }
             }
           ]
@@ -115,11 +136,12 @@ module.exports = {
 
         {
           test: /\.(eot|ttf|woff|woff2|otf)$/,
+          exclude: /(node_modules)/,
           use: [
             {
               loader: 'url-loader',
               options: {
-                name: '/fonts/[name].[hash].[ext]'
+                name: './fonts/[name].[hash].[ext]'
               }
             }
           ]
@@ -138,21 +160,21 @@ module.exports = {
   //  new CleanWebpackPlugin(['dist']),
 
     new HtmlWebpackPlugin({
-      filename: '../index.html',
+      filename: 'index.html',
       title: 'Quotes',
       template: './src/index.html',
       inject: true,
       sourceMap: true,
       minify:{
         removeComments: true,
-        collapseWhhitespace: true
+        collapseWhitespace: true
       }
-    }),
-
-    new MiniCssExtractPlugin({
-      filename: './css/[name].[hash].css'
     })
-
+/*
+    new MiniCssExtractPlugin({
+      filename: './css/style.css'
+    })
+*/
   ]
 
 }

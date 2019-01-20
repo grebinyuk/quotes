@@ -1,2 +1,52 @@
+@import "_fonts"
+@import "_libs"
+@import "_vars"
+
+
+
+*
+  box-sizing: border-box
+  &::before, &::after
+  box-sizing: border-box
+
+
+html, body
+  height: 100%
+
 body
-  background-color: red
+  font-size: 16px
+  min-width: 320px
+  position: relative
+  line-height: 1.75
+  overflow: hidden
+  opacity: 1
+  background-color: grey
+  font-family: sans-serif
+  .wrapper
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: 150px repeat(6, auto) 630px
+.h1, .h2, .h3, .h4, .h5, .h6
+	line-height: 1.4
+	text-transform: uppercase
+
+
+.my_header
+  display: block
+  width: 1vw
+  height: auto
+  .logo
+    width: auto
+
+    a
+      background-color: black
+      display: block
+      line-height: 1.6em
+      color: white
+      font-size: 20px
+      font-family: montserrat
+      font-weight: bold
+
+
+
+
+@import "media" // Всегда в конце
