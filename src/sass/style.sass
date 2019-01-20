@@ -12,41 +12,133 @@
 
 html, body
   height: 100%
+  padding: 0
+  margin: 0
 
 body
   font-size: 16px
   min-width: 320px
+  padding: 0
   position: relative
   line-height: 1.75
   overflow: hidden
   opacity: 1
-  background-color: grey
   font-family: sans-serif
-  .wrapper
-    grid-template-columns: 1fr 1fr
-    grid-template-rows: 150px repeat(6, auto) 630px
+
 .h1, .h2, .h3, .h4, .h5, .h6
 	line-height: 1.4
 	text-transform: uppercase
 
 
-.my_header
-  display: block
-  width: 1vw
-  height: auto
-  .logo
-    width: auto
 
+.wrapper
+
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-template-rows: auto repeat(6, auto) 630px
+
+
+// ==========================
+//         HEADER
+// ==========================
+
+
+.my_header
+  display: flex
+  justify-content: space-between
+  grid-column: 1/-1
+  width: 100vw
+  padding: 3.5vw 7vw 0
+  background-color: grey
+  z-index: 5
+
+      /*LOGO*/
+
+  .logo
+    background-color: black
+    text-align: center
+    padding: 1.1em 1.2em
+    height: 80px
+    height: auto
+    cursor: pointer
     a
-      background-color: black
-      display: block
-      line-height: 1.6em
+      line-height: 100%
       color: white
-      font-size: 20px
+      font-size: 1.3em
       font-family: montserrat
       font-weight: bold
+      letter-spacing: 0.2em
+      text-decoration: none
+
+  /*BUTTON FOR HAMBURGER-MENU*/
+
+  .hamburger-button
+    position: relative
+    width: 50px
+    text-align: center
+    margin-top: 1.7vw
+    .buttom-text
+      position: relative
+      text-decoration: none
+      font-size: 11px
+      color: white
+      font-family: montserrat
+      font-weight: bold
+      letter-spacing: 4px
+      text-transform: uppercase
+      transition: all 0.5s
+      span
+        line-height: 11px
+        position: absolute
+        transition: all 0.5s
+
+    .buttom-text::before, .buttom-text::after
+      content: ''
+      position: absolute
+      left: -2px
+      width: 50px
+      height: 3px
+      background-color: white
 
 
+    .buttom-text::before
+      top: -10px
+      transition: all 0.3s
+
+    .buttom-text::after
+      top: 20px
+      transition: all 0.3s
+
+  .hamburger-button::before
+    content: ''
+    position: absolute
+    left: -2px
+    top: -10px
+    width: 50px
+    height: 3px
+    background-color: white
+    opacity: 0.5
+    transition: 0.3s
+    cursor: pointer
+
+    /*CLICK ON BUTTON*/
+
+.hamburger-button:hover
+  .buttom-text
+    span
+      transform: translateY(15px)
+    //  top: 15px
+
+  .buttom-text::before
+    transform: rotate(40deg)
+
+  .buttom-text::after
+    opacity: 0
+
+
+.hamburger-button:hover::before
+    opacity: 1
+    transform: rotate(-40deg)
 
 
 @import "media" // Всегда в конце
