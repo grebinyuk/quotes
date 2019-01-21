@@ -111,6 +111,7 @@ module.exports = {
               options: {
               name: '[name].[ext]',
               outputPath: './fonts/',
+              publicPath: '/'
               }
           }]
         },
@@ -125,9 +126,12 @@ module.exports = {
           test: /\.(png|gif|jpg|jpeg)$/,
           use: [
             {
-              loader: 'file-loader',
+              loader: 'url-loader',
               options: {
-                name: './img/[name].[hash].[ext]'
+                name: '[name].[ext]',
+                outputPath: './img/',
+                publicPath: '/'
+
               }
             }
           ]
@@ -141,7 +145,8 @@ module.exports = {
             {
               loader: 'url-loader',
               options: {
-                name: './fonts/[name].[hash].[ext]'
+                name: './fonts/[name].[ext]',
+                publicPath: '/'
               }
             }
           ]
