@@ -104,7 +104,7 @@ module.exports = {
           ]
         },
 
-        {
+        /*{
           test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
           use: [{
               loader: 'file-loader',
@@ -114,7 +114,7 @@ module.exports = {
               publicPath: '/'
               }
           }]
-        },
+        },*/
 
         {
           test: /\.css$/,
@@ -145,7 +145,8 @@ module.exports = {
             {
               loader: 'url-loader',
               options: {
-                name: './fonts/[name].[ext]',
+                name: '[name].[ext]',
+                outputPath: './fonts/',
                 publicPath: '/'
               }
             }

@@ -6,28 +6,161 @@
 @media only screen and (max-width : 1200px)
   /**/
 
+
+
+
+
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
   /**/
 
 
+
+
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-  /**/
+  // ==========================
+  //         HEADER
+  // ==========================
+  .my_header
+    padding: 5vw 15vw 0
+    .hamburger
+      margin-top: 2.2vw
+
+  #hamburger-menu
+    font-size: 2.5em
+    ul
+      margin-top: 14vw
+      margin-left: 15vw
+      li
+        height: 1.5em
+        line-height: 1.5em
+
+
+          // ==========================
+          //         HEADER SLIDER
+          // ==========================
+
+  .h__slide-1 /*== SLIDE 1 AND 3 ==*/
+    .slide-1_content
+      padding-right: 5vw
+      h1
+        font-size: 07em
+      p
+        font-size: 1.8em
+  /* == SLIDE 2 AND 5 ==*/
+  .h__slide-2
+    background-position:  right
+    .slide-2_content
+      margin: 25% 0 0 14%
+      p
+        font-size: 2em
+      p:last-child
+        font-size: 1.8em
+
+
+      /*== SLIDE 4 ==*/
+  .h__slide-4
+    .slide-4_content
+      p
+        padding: 0.4em
+        letter-spacing: 0.07em
+        font-size: 1.8em
 
 
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-  /**/
+  // ==========================
+  //         HEADER
+  // ==========================
+  .my_header
+    .hamburger
+      margin-top: 3.2vw
+    .logo
+      padding: 1em 1.1em
+      a
+        font-size: 1em
+
+  #hamburger-menu
+    font-size: 2.2em
+    ul
+      margin-top: 18vw
+      margin-left: 20vw
+      li
+        height: 1.5em
+        line-height: 1.5em
+
+  // ==========================
+  //         HEADER SLIDER
+  // ==========================
+  .h__slide-1 /*== SLIDE 1 AND 3 ==*/
+    justify-content: center
+    background-position: 20%
+    .slide-1_content
+      h1
+        font-size: 5em
+      p
+        font-size: 1.5em
+        letter-spacing: 0.1em
+
+
+  /* == SLIDE 2 AND 5 ==*/
+  .h__slide-2
+    background-position:  right
+    .slide-2_content
+      margin: 25% 0 0 14%
+      p
+        font-size: 2em
+      p:last-child
+        margin-top: 0.3em
+        font-size: 1.8em
+
+    /*== SLIDE 4 ==*/
+  .h__slide-4
+    .slide-4_content
+      p
+        padding: 0.5em 0.3em
+        letter-spacing: 0.05em
+        font-size: 1.6em
+
 
 
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
-  /**/
+  #hamburger-menu
+    font-size: 2em
+    ul
+      margin-top: 25vw
+      margin-left: 12vw
+      li
+        height: 1.5em
+        line-height: 1.5em
+  // ==========================
+  //         HEADER SLIDER
+  // ==========================
+  .h__slide-1 /*== SLIDE 1 AND 3 ==*/
+    justify-content: center
+    .slide-1_content
+      padding-left: 5vw
 
-/*==========  Mobile First  ==========*/
+  /* == SLIDE 2 AND 5 ==*/
+  .h__slide-2
+    background-position:  right
+
+    .slide-2_content
+      color: grey
+      margin: 80% 0 0 8%
+
+  /*== SLIDE 4 ==*/
+  .h__slide-4
+    .slide-4_content
+      width: 80%
+      p
+        padding: 0.5em 0.3em
+        letter-spacing: 0.08em
+        font-size: 1.6em
 
 /* Custom, iPhone Retina */
 @media only screen and (min-width : 320px)
