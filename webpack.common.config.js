@@ -6,23 +6,23 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+//const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const autoprefixer = require('autoprefixer');
-const devMode = process.env.NODE_ENV !== 'production'
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
 
   entry:{
-      index: ['./src/js/index.js',/*'./src/sass/style.sass'*/]
+      index: ['./src/js/index.js','./src/sass/style.sass']
       //style: './src/sass/style.sass'
   },
 
 
   output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: '[name].[hash].bandle.js',
-    //  chunkFilename: '[name].[hash].bandle.js',
+      filename: './js/[name].[hash].bandle.js',
+      chunkFilename: './js/[name].[hash].bandle.js',
       publicPath: '/'
   },
 
@@ -70,8 +70,8 @@ module.exports = {
 
         },
 
-          /* for SASSjj*/
-        {
+          /* for SASS*/
+      /*  {
           test: /\.(sass|scss)$/,
           exclude: /(node_modules)/,
           use: [
@@ -101,15 +101,15 @@ module.exports = {
                   }
                 }
       ]
-    },
+    },*/
 
         {
           test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
           use: [{
-              loader: 'url-loader',
+              loader: 'file-loader',
               options: {
               name: '[name].[ext]',
-              outputPath: './fonts/',
+              outputPath: './fonts',
               publicPath: '/'
               }
           }]
@@ -125,10 +125,10 @@ module.exports = {
           test: /\.(png|gif|jpg|jpeg)$/,
           use: [
             {
-              loader: 'url-loader',
+              loader:  'file-loader',
               options: {
                 name: '[name].[ext]',
-                outputPath: './img/',
+                outputPath: './img',
                 publicPath: '/'
 
               }
@@ -176,12 +176,13 @@ module.exports = {
         removeComments: true,
         collapseWhitespace: true
       }
-    }),
-
-    new MiniCssExtractPlugin({
-      filename: devMode ? 'style.css' : '[name].[hash].css',
-      outputPath: './css/'
     })
+/*
+    new MiniCssExtractPlugin({
+      filename: './css/style.css',
+      //outputPath: './css/'
+    })
+    */
 /*
     new MiniCssExtractPlugin({
       filename: './css/style.css'

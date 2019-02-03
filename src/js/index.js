@@ -1,15 +1,5 @@
-import '../sass/style'
+// import '../sass/style'
 
-
-/* ==========  PRELOADER =========== */
-// $(window).on('load', function(){
-// 	$('.preloader').delay(100).fadeOut('slow');
-// })
-
-// window.addEventListener("load", function(){
-// var preloader = document.querySelector('.preloader');
-// preloader.classList.remove('.preloader');
-// })
 
 window.onload = function(){
   let id = setTimeout(function(){
@@ -49,10 +39,6 @@ hamburgerButton.addEventListener('click', openHamburgerMenu);
           }
       }
   }
-
-
-
-
 
 
 
