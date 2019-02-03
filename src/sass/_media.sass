@@ -5,6 +5,25 @@
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
   /**/
+  /**/
+    /* ============  S - QUOTES  ============ */
+  .quote-box
+    .quote-inner
+      top: 13%
+      line-height: 1.5em
+      font-size: 1.6em
+      .q-autor
+        margin-top: 1.8em
+  .photo-box
+    background-position: 50%
+
+
+          /* ==========  FOOTER  =========== */
+
+  .my_footer
+    font-size: 0.8em
+    .subscribe
+      width: 190px
 
 
 
@@ -13,33 +32,64 @@
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
   /**/
+  //
+  //
+  /*===========  S - QUOTES ==============*/
+  .quote-box
+    .quote-inner
+      top: 12%
+      line-height: 1.5em
+      font-size: 1.4em
+      .q-autor
+        margin-top: 1.4em
 
 
+
+      /* ==========  FOOTER  =========== */
+
+  .my_footer
+    //social icons
+    .social
+      flex-direction: column-reverse
+      justify-content: center
+      align-items: center
+      height: auto
+      .soc
+        margin: 1em 0 0 0
+        ul
+          li
+            line-height: 2em
+            font-size: 2em
+            &:not(:last-child)
+              margin-right: 1.2em
+      p
+        margin: 1em 0 0.5em 0
+        line-height: 3em
 
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-  // ==========================
-  //         HEADER
-  // ==========================
+  //
+  //
+  //  /* ==========  HEADER  =========== */
   .my_header
     padding: 5vw 15vw 0
     .hamburger
       margin-top: 2.2vw
 
+                  //hamburger menu
   #hamburger-menu
     font-size: 2.5em
     ul
-      margin-top: 14vw
+      margin-top: 10vw
       margin-left: 15vw
       li
         height: 1.5em
         line-height: 1.5em
 
 
-          // ==========================
-          //         HEADER SLIDER
-          // ==========================
+
+    /* ==========  HEADER SLIDER  =========== */
 
   .h__slide-1 /*== SLIDE 1 AND 3 ==*/
     .slide-1_content
@@ -48,7 +98,8 @@
         font-size: 07em
       p
         font-size: 1.8em
-  /* == SLIDE 2 AND 5 ==*/
+
+  /*  SLIDE 2 AND 5 */
   .h__slide-2
     background-position:  right
     .slide-2_content
@@ -59,7 +110,7 @@
         font-size: 1.8em
 
 
-      /*== SLIDE 4 ==*/
+      /* SLIDE 4 */
   .h__slide-4
     .slide-4_content
       p
@@ -69,11 +120,47 @@
 
 
 
+        /* ==========  S - QUOTES  =========== */
+  .quote-box
+    .quote-inner
+      top: 9%
+      line-height: 1.4em
+      font-size: 1.3em
+      .q-autor
+        margin-top: 1.3em
+
+
+
+        /* ==========  S - QUOTE OF THE DAY  =========== */
+
+    //block position in the grid
+  .quote-day
+    .quote-day_content
+      p
+        font-size: 2em
+
+
+          /* ==========  FOOTER  =========== */
+
+  .my_footer
+    justify-content: space-between
+    font-size: 0.7em
+    .browse
+      min-width: 40%
+      margin-left: $default-margin
+    .shop
+      min-width: 25%
+      margin-right: $default-margin
+    .contact
+      min-width: 40%
+      margin-left: $default-margin
+
+
+
+
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-  // ==========================
-  //         HEADER
-  // ==========================
+  ///* ==========  HEADER  =========== */
   .my_header
     .hamburger
       margin-top: 3.2vw
@@ -91,9 +178,9 @@
         height: 1.5em
         line-height: 1.5em
 
-  // ==========================
-  //         HEADER SLIDER
-  // ==========================
+
+                    /* ==========  HEADER SLIDER  =========== */
+
   .h__slide-1 /*== SLIDE 1 AND 3 ==*/
     justify-content: center
     background-position: 20%
@@ -105,7 +192,7 @@
         letter-spacing: 0.1em
 
 
-  /* == SLIDE 2 AND 5 ==*/
+  /*  SLIDE 2 AND 5 */
   .h__slide-2
     background-position:  right
     .slide-2_content
@@ -116,13 +203,67 @@
         margin-top: 0.3em
         font-size: 1.8em
 
-    /*== SLIDE 4 ==*/
+
+    /* SLIDE 4 */
   .h__slide-4
     .slide-4_content
       p
         padding: 0.5em 0.3em
         letter-spacing: 0.05em
         font-size: 1.6em
+
+
+
+
+              /* ==========  S - QUOTES  =========== */
+  .quote-box
+    display: block
+    width: 100%
+    .quote-inner
+      top: 25%
+      line-height: 1.4em
+      font-size: 1.2em
+      width: 80%
+
+      .q-autor
+        margin-top: 2em
+
+  .photo-box
+    display: block
+    background-position: 80%
+    width: 100%
+
+
+
+              /* ==========  FOOTER  =========== */
+
+  .my_footer
+    flex-direction: column
+    flex-wrap: nowrap
+    justify-content: center
+    align-content: center
+    .browse
+      display: none
+    .contact
+      display: none
+    .shop, .subscribe
+      margin: 4em 0 0 25vw
+      width: 50vw
+      min-width: 250px
+      h1
+        margin-bottom: 1em
+    .subscribe
+      form
+        input
+          width: 80%
+    .social
+      .soc
+        ul
+          li:not(:last-child)
+            margin-right: 0.8em
+      p
+        font-size: 0.7em
+
 
 
 
@@ -137,15 +278,16 @@
       li
         height: 1.5em
         line-height: 1.5em
-  // ==========================
-  //         HEADER SLIDER
-  // ==========================
+
+
+
+  /* ==========  HEADER SLIDER  =========== */
   .h__slide-1 /*== SLIDE 1 AND 3 ==*/
     justify-content: center
     .slide-1_content
       padding-left: 5vw
 
-  /* == SLIDE 2 AND 5 ==*/
+  /*  SLIDE 2 AND 5 */
   .h__slide-2
     background-position:  right
 
@@ -153,7 +295,7 @@
       color: grey
       margin: 80% 0 0 8%
 
-  /*== SLIDE 4 ==*/
+  /* SLIDE 4 */
   .h__slide-4
     .slide-4_content
       width: 80%
@@ -162,26 +304,14 @@
         letter-spacing: 0.08em
         font-size: 1.6em
 
-/* Custom, iPhone Retina */
-@media only screen and (min-width : 320px)
-	/**/
 
 
-/* Extra Small Devices, Phones */
-@media only screen and (min-width : 480px)
-	/**/
+    /* ==========  S - QUOTE OF THE DAY  =========== */
 
-
-/* Small Devices, Tablets */
-@media only screen and (min-width : 768px)
-	/**/
-
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width : 992px)
-	/**/
-
-
-/* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px)
-	/**/
+  //block position in the grid
+  .quote-day
+    .quote-day_content
+      p
+        font-size: 1.7em
+        &:last-child
+          font-size: 0.8em

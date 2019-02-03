@@ -12,6 +12,7 @@ const webpack = require('webpack');
     publicPath: '/',
 
   },
+
     plugins: [
       new webpack.HotModuleReplacementPlugin()
   ]

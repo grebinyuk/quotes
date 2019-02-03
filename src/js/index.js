@@ -1,9 +1,27 @@
 import '../sass/style'
 
+
+/* ==========  PRELOADER =========== */
+// $(window).on('load', function(){
+// 	$('.preloader').delay(100).fadeOut('slow');
+// })
+
+// window.addEventListener("load", function(){
+// var preloader = document.querySelector('.preloader');
+// preloader.classList.remove('.preloader');
+// })
+
+window.onload = function(){
+  let id = setTimeout(function(){
+    let preloader = document.querySelector('.preloader');
+    preloader.classList.remove('preloader');
+  },100)
+}
+
 document.addEventListener("DOMContentLoaded", function(){
 
 
-      /*== HAMBURGER MENU ==*/
+      /*  ==  HAMBURGER MENU   ==  */
 
 var hamburgerNav = document.getElementById('hamburger-menu');
 var hamburgerButton = document.querySelector('.hamburger');
@@ -39,12 +57,7 @@ hamburgerButton.addEventListener('click', openHamburgerMenu);
 
 
 
-
-
-
-
-
-  /*== SLIDER ==*/
+            /*  ==  SLIDER  ==  */
 
   var slideIndex = 1;
   showSlides(slideIndex);
@@ -59,8 +72,7 @@ hamburgerButton.addEventListener('click', openHamburgerMenu);
 
 
 var dotCliker = document.getElementsByClassName('h-slider__nav')[0];
-
-  dotCliker.addEventListener("click", currentSlide);
+dotCliker.addEventListener("click", currentSlide);
 
   function currentSlide(event){
       var target = event.target;
@@ -71,8 +83,9 @@ var dotCliker = document.getElementsByClassName('h-slider__nav')[0];
       var n = elem.getAttribute('data-h-slide');
       slideIndex = +n;
 
-    showSlides(slideIndex);
+      showSlides(slideIndex);
   };
+
 
 
   function showSlides(n){
@@ -83,6 +96,7 @@ var dotCliker = document.getElementsByClassName('h-slider__nav')[0];
     if(n > slides.length){
       slideIndex = 1;
     }
+
     if(n < 1){
       slideIndex = slides.length
     }
@@ -90,10 +104,14 @@ var dotCliker = document.getElementsByClassName('h-slider__nav')[0];
     for(i =0; i < slides.length; i++){
       slides[i].classList.remove('h_active');
     }
+
      for(i=0; i < dots.length; i++){
        dots[i].classList.remove('dot_active');
      }
+
     slides[slideIndex-1].classList.add('h_active');
     dots[slideIndex-1].classList.add('dot_active');
   }
+
+
 });

@@ -13,5 +13,15 @@ module.exports = merge(common, {
       new UglifyJsPlugin(),
       new OptimizeCSSAssetsPlugin()
     ]
-  }
+  },
+
+  plugins: [
+
+    new CleanWebpackPlugin(['dist']),
+
+
+  ]
+
+
+
 });

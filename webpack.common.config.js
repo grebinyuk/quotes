@@ -9,7 +9,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const autoprefixer = require('autoprefixer');
-
+const devMode = process.env.NODE_ENV !== 'production'
 
 module.exports = {
 
@@ -34,7 +34,7 @@ module.exports = {
         path.resolve(__dirname, 'src/fonts') //?????
       ],
 
-    extensions: [ '.js', '.css', '.sass']
+    extensions: [ '.js', '.css', '.sass', '.scss', 'woff',  'woff2', 'ttf', 'eot', 'svg']
   },
 
 
@@ -70,51 +70,50 @@ module.exports = {
 
         },
 
-            /* for SASS*/
+          /* for SASSjj*/
         {
           test: /\.(sass|scss)$/,
           exclude: /(node_modules)/,
           use: [
-                {
-                  loader: 'style-loader'
-                },
-          //  MiniCssExtractPlugin.loader,
+
+                devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
 
               {
                 loader: 'css-loader',
                   options:{
+                    sourceMap: true,
+
+                  }
+                },
+
+                {
+                  loader: 'postcss-loader',
+                  options: {
+                    plugins: [autoprefixer('last 2 version')],
                     sourceMap: true
                   }
-              },
+                },
 
-              {
-                loader: 'postcss-loader',
-                options: {
-                  plugins: [autoprefixer('last 2 version')],
-                  sourceMap: true
+                {
+                  loader: 'sass-loader',
+                  options: {
+                    sourceMap: true
+                  }
                 }
-              },
+      ]
+    },
 
-              {
-                loader: 'sass-loader',
-                options: {
-                  sourceMap: true
-                }
-              }
-          ]
-        },
-
-        /*{
-          test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        {
+          test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
           use: [{
-              loader: 'file-loader',
+              loader: 'url-loader',
               options: {
               name: '[name].[ext]',
               outputPath: './fonts/',
               publicPath: '/'
               }
           }]
-        },*/
+        },
 
         {
           test: /\.css$/,
@@ -135,11 +134,11 @@ module.exports = {
               }
             }
           ]
-        },
+        }
 
 
-        {
-          test: /\.(eot|ttf|woff|woff2|otf)$/,
+          /*{
+        test: /\.(eot|ttf|woff|woff2|otf)$/,
           exclude: /(node_modules)/,
           use: [
             {
@@ -151,13 +150,15 @@ module.exports = {
               }
             }
           ]
-        },
+        },*/
 
-
+/*
         {
           test: /\.svg$/,
+          exclude: /(node_modules)/,
+
           use: 'svg-url-loader'
-        }
+        }*/
     ]
   },
 
@@ -175,6 +176,11 @@ module.exports = {
         removeComments: true,
         collapseWhitespace: true
       }
+    }),
+
+    new MiniCssExtractPlugin({
+      filename: devMode ? 'style.css' : '[name].[hash].css',
+      outputPath: './css/'
     })
 /*
     new MiniCssExtractPlugin({
