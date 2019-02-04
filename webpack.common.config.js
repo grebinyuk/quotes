@@ -22,8 +22,8 @@ module.exports = {
   output: {
       path: path.resolve(__dirname, 'dist'),
       filename: './js/[name].[hash].bandle.js',
-      chunkFilename: './js/[name].[hash].bandle.js',
-      publicPath: '/'
+      chunkFilename: './js/[name].[hash].bandle.js'
+    //  publicPath: '/'
   },
 
 
@@ -109,17 +109,17 @@ module.exports = {
               loader: 'file-loader',
               options: {
               name: '[name].[ext]',
-              outputPath: './fonts',
-              publicPath: '/'
+              outputPath: './fonts/'
+              //publicPath: '/'
               }
           }]
         },
 
-        {
+      /*  {
           test: /\.css$/,
           exclude: /(sass)/,
           use: [ 'style-loader', 'css-loader']
-        },
+        },*/
 
         {
           test: /\.(png|gif|jpg|jpeg)$/,
@@ -128,8 +128,8 @@ module.exports = {
               loader:  'file-loader',
               options: {
                 name: '[name].[ext]',
-                outputPath: './img',
-                publicPath: '/'
+                outputPath: './img/'
+              //  publicPath: '/'
 
               }
             }

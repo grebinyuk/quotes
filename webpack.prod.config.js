@@ -14,8 +14,8 @@ module.exports = merge(common, {
 
   optimization: {
     minimizer: [
-      new UglifyJsPlugin(),
-      new OptimizeCSSAssetsPlugin()
+      //new UglifyJsPlugin(),
+    //  new OptimizeCSSAssetsPlugin()
     ]
   },
 
@@ -52,16 +52,17 @@ module.exports = merge(common, {
               }
             }
   ]
-},
+}
     ]
   },
 
   plugins: [
 
-    new CleanWebpackPlugin(['dist']),
+    //new CleanWebpackPlugin(['dist']),
 
     new MiniCssExtractPlugin({
-      filename: './css/style.css',
+    //  filename: './css/[name].css',
+      //chunkFilename: "./css/[id].css"
       //outputPath: './css/'
     })
 
