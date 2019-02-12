@@ -20,6 +20,13 @@
   src: url(fonts/RalewayBold.eot?#iefix) format("embedded-opentype"), url(fonts/RalewayBold.woff) format("woff"), url(fonts/RalewayBold.ttf) format("truetype"); }
 
 @font-face {
+  font-family: "raleway";
+  font-weight: medium;
+  font-style: normal;
+  src: url(fonts/RalewayMedium.eot);
+  src: url(fonts/RalewayMedium.eot?#iefix) format("embedded-opentype"), url(fonts/RalewayMedium.woff) format("woff"), url(fonts/RalewayMedium.ttf) format("truetype"); }
+
+@font-face {
   font-family: "montserrat";
   font-weight: 100;
   font-style: normal;
@@ -4548,19 +4555,17 @@ body {
     -webkit-transition: 0.2s;
     transition: 0.2s; }
 
-.hamburger:hover {
-  color: red; }
-
-.close-nav .buttom-text span {
-  -webkit-transform: translateY(15px);
-          transform: translateY(15px); }
-
-.close-nav .buttom-text::before {
-  -webkit-transform: rotate(40deg);
-          transform: rotate(40deg); }
-
-.close-nav .buttom-text::after {
-  opacity: 0; }
+.close-nav {
+  position: fixed;
+  right: 10vw; }
+  .close-nav .buttom-text span {
+    -webkit-transform: translateY(15px);
+            transform: translateY(15px); }
+  .close-nav .buttom-text::before {
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg); }
+  .close-nav .buttom-text::after {
+    opacity: 0; }
 
 .close-nav .hamburger-button::before {
   opacity: 1;
@@ -4813,12 +4818,140 @@ body {
   background-color: black;
   background-image: url(img/img1.png);
   background-size: cover;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  /* ==========   S - REASONS  =========== */ }
 
 .grid_item-4 {
   grid-column: 1/-1;
   grid-row: 4/5;
-  z-index: 1;
+  z-index: 1; }
+
+.s-happy-reasons {
+  width: 100%;
+  height: auto;
+  min-height: 480px;
+  min-width: 320px; }
+  .s-happy-reasons h1, .s-happy-reasons p {
+    padding: 0; }
+
+.s-title {
+  position: relative;
+  font-family: raleway;
+  font-weight: bold;
+  font-size: 3.75em;
+  line-height: 1.92em;
+  margin: 2em 0 0 10vw;
+  -webkit-transition: All 0.8s ease;
+  transition: All 0.8s ease; }
+  .s-title::after {
+    content: "";
+    position: absolute;
+    bottom: -0.2em;
+    left: 0;
+    width: 2em;
+    height: 2px;
+    background-color: grey; }
+
+.reasons-box {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 8em 10vw 0 10vw;
+  position: relative;
+  overflow: hidden;
+  width: 80%;
+  height: auto;
+  min-height: 480px; }
+
+.reasons {
+  display: none;
+  opacity: 0;
+  position: relative;
+  width: 50%;
+  height: 17.5em;
+  padding: 3em;
+  border: solid 1px #f6f6f6;
+  font-family: raleway, arial;
+  font-size: 1.1em;
+  -webkit-transition: opacity 0.8s ease;
+  transition: opacity 0.8s ease;
+  -webkit-animation: r-close .8s ease;
+          animation: r-close .8s ease; }
+  .reasons:not(:first-child) {
+    margin-top: -1px; }
+  .reasons:nth-child(2) {
+    margin-top: 0; }
+  .reasons:nth-child(2n) {
+    margin-left: -1px; }
+
+.r-active {
+  display: block;
+  opacity: 1;
+  -webkit-animation: r-open .8s ease;
+          animation: r-open .8s ease; }
+
+.reasons h2 {
+  margin: 0 0 1.3em 0;
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase; }
+
+.reasons p {
+  font-weight: medium;
+  line-height: 1.5em;
+  margin-bottom: 1.5em; }
+
+.reasons span {
+  font-weight: 400; }
+
+.s-button {
+  display: block;
+  padding: 0.8em 1.2em;
+  margin: 3em auto 15vh;
+  font-family: montserrat;
+  font-weight: bold;
+  font-size: 1.1em;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 2px solid #000;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer; }
+  .s-button:hover {
+    background-color: #3e65e3; }
+
+@-webkit-keyframes r-open {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes r-open {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@-webkit-keyframes r-close {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; }
+  /* ==========   S - QUOTE OF THE DAY  =========== */ }
+
+@keyframes r-close {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; }
   /* ==========   S - QUOTE OF THE DAY  =========== */ }
 
 .grid_item-5 {
@@ -5002,6 +5135,13 @@ body {
       .subscribe form button:hover {
         background-color: #3e65e3; }
 
+.psd {
+  position: fixed;
+  bottom: 0;
+  opacity: .1;
+  text-decoration: none;
+  font-size: 14px; }
+
 /*==========  Desktop First  ==========*/
 /* Large Devices, Wide Screens */
 @media only screen and (max-width: 1200px) {
@@ -5016,6 +5156,15 @@ body {
       margin-top: 1.8em; }
   .photo-box {
     background-position: 50%;
+    /* ==========   S - REASONS  =========== */ }
+  .s-title {
+    font-size: 2.5em;
+    margin-top: 1em; }
+  .reasons-box {
+    margin-top: 5em; }
+  .reasons {
+    padding: 2em;
+    height: 15em;
     /* ==========  FOOTER  =========== */ }
   .my_footer {
     font-size: 0.8em; }
@@ -5030,9 +5179,19 @@ body {
     top: 12%;
     line-height: 1.5em;
     font-size: 1.4em;
-    /* ==========  FOOTER  =========== */ }
+    /* ==========   S - REASONS  =========== */ }
     .quote-box .quote-inner .q-autor {
       margin-top: 1.4em; }
+  .reasons {
+    width: 50%;
+    font-size: 1em;
+    padding: 1.5em;
+    height: 15em; }
+    .reasons h2 {
+      font-size: 1.2em; }
+    .reasons p {
+      line-height: 1.3em;
+      /* ==========  FOOTER  =========== */ }
   .my_footer .social {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -5062,6 +5221,8 @@ body {
     padding: 5vw 15vw 0; }
     .my_header .hamburger {
       margin-top: 2.2vw; }
+  .close-nav {
+    right: 15vw; }
   #hamburger-menu {
     font-size: 2.5em;
     /* ==========  HEADER SLIDER  =========== */ }
@@ -5092,13 +5253,38 @@ body {
     letter-spacing: 0.07em;
     font-size: 1.8em;
     /* ==========  S - QUOTES  =========== */ }
-  .quote-box .quote-inner {
-    top: 9%;
-    line-height: 1.4em;
-    font-size: 1.3em; }
-    .quote-box .quote-inner .q-autor {
-      margin-top: 1.3em;
-      /* ==========  S - QUOTE OF THE DAY  =========== */ }
+  .quote-box {
+    /* ==========   S - REASONS  =========== */ }
+    .quote-box .quote-inner {
+      top: 9%;
+      line-height: 1.4em;
+      font-size: 1.3em; }
+      .quote-box .quote-inner .q-autor {
+        margin-top: 1.3em; }
+  .s-title {
+    font-size: 2.5em;
+    margin-top: 1.2em; }
+  .reasons-box {
+    margin-top: 3em;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .reasons {
+    width: 80%;
+    font-size: 0.8em;
+    height: auto; }
+    .reasons:nth-child(2) {
+      margin-top: -1px; }
+    .reasons:nth-child(2n) {
+      margin-left: 0; }
+    .reasons span {
+      margin-bottom: 1em; }
+  .s-button {
+    font-size: 0.92em;
+    letter-spacing: 0.1em;
+    padding: 0.5em 1em;
+    margin: 3em auto 10vh;
+    /* ==========  S - QUOTE OF THE DAY  =========== */ }
   .quote-day .quote-day_content p {
     font-size: 2em;
     /* ==========  FOOTER  =========== */ }
@@ -5171,10 +5357,31 @@ body {
       .quote-box .quote-inner .q-autor {
         margin-top: 2em; }
   .photo-box {
-    display: block;
+    display: none;
     background-position: 80%;
+    width: 100%; }
+  .s-title {
+    font-size: 1.65em;
+    margin-top: 1.2em; }
+  .reasons-box {
+    margin-top: 2.5em; }
+  .reasons {
     width: 100%;
-    /* ==========  FOOTER  =========== */ }
+    font-size: 0.8em; }
+    .reasons span {
+      margin-bottom: 1em; }
+  .s-button {
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+    padding: 0.5em 0.8em;
+    margin: 2em auto 8vh; }
+  /* ==========  S - QUOTE OF THE DAY  =========== */
+  .quote-day .quote-day_content p {
+    font-size: 1.5em; }
+    .quote-day .quote-day_content p:last-child {
+      font-size: 0.9em;
+      margin-top: 1.7em;
+      /* ==========  FOOTER  =========== */ }
   .my_footer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -5237,7 +5444,7 @@ body {
         letter-spacing: 0.08em;
         font-size: 1.6em; }
   .quote-day .quote-day_content p {
-    font-size: 1.7em; }
+    font-size: 1.2em; }
     .quote-day .quote-day_content p:last-child {
-      font-size: 0.8em; } }
+      font-size: 0.7em; } }
 
