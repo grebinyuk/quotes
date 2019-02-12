@@ -1,5 +1,6 @@
 // import '../sass/style'
 
+  /*  ==  PRELOADER   ==  */
 
 window.onload = function(){
   let id = setTimeout(function(){
@@ -97,6 +98,25 @@ dotCliker.addEventListener("click", currentSlide);
 
     slides[slideIndex-1].classList.add('h_active');
     dots[slideIndex-1].classList.add('dot_active');
+  }
+
+
+  /* ==========   S - REASONS  =========== */
+
+  var reasonBotton = document.getElementById('btn-reasons');
+  var reasons = document.querySelectorAll('.reasons');
+  reasonBotton.addEventListener("click", showReasons);
+
+// open more box with quotes
+  function showReasons(){
+
+    for( let i = 0; i < reasons.length; i++){
+      if(!reasons[i].classList.contains('r-active')){
+        reasons[i].classList.add('r-active');
+      }else if(i > 3){
+        reasons[i].classList.remove('r-active');
+      }
+    }
   }
 
 

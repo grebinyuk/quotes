@@ -177,9 +177,10 @@ body
     transition: 0.2s
 
 
-.hamburger:hover
-  color: red
+
 .close-nav
+  position: fixed
+  right: 10vw
   .buttom-text
     span
       transform: translateY(15px)
@@ -190,7 +191,7 @@ body
   .buttom-text::after
     opacity: 0
 
-.hamburger:hover
+
 .close-nav
   .hamburger-button::before
     opacity: 1
@@ -450,19 +451,126 @@ body
 
 
 
-// ==========================
-//         S - REASONS
-// ==========================
-//block position in the grid
+  /* ==========   S - REASONS  =========== */
+
+//position in the grid
 .grid_item-4
   grid-column: 1/-1
   grid-row: 4/5
   z-index: 1
 
+.s-happy-reasons
+  width: 100%
+  height: auto
+  min-height: 480px
+  min-width: 320px
+  h1,p
+    // margin: 0
+    padding: 0
+
+  // style for section title
+.s-title
+  position: relative
+  font-family: raleway
+  font-weight: bold
+  font-size: 3.75em
+  line-height: 1.92em
+  margin: 2em 0 0 $default-margin
+  transition: All 0.8s ease
+  &::after
+    content: ""
+    position: absolute
+    bottom: -0.2em
+    left: 0
+    width: 2em
+    height: 2px
+    background-color: grey
+
+
+.reasons-box
+  position: absolute
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  margin: 8em $default-margin  0 $default-margin
+  position: relative
+  overflow: hidden
+  width: 80%
+  height: auto
+  min-height: 480px
+
+
+.reasons
+  display: none
+  opacity: 0
+  position: relative
+  width: 50%
+  height: 17.5em
+  padding: 3em
+  border: solid 1px #f6f6f6
+  font-family: raleway, arial
+  font-size: 1.1em
+  transition: opacity 0.8s ease
+  animation: r-close .8s ease
+  &:not(:first-child)
+    margin-top: -1px
+  &:nth-child(2)
+    margin-top: 0
+  &:nth-child(2n)
+    margin-left: -1px
+
+.r-active
+  display: block
+  opacity: 1
+  animation: r-open .8s ease
+
+.reasons
+  h2
+    margin: 0 0 1.3em 0
+    font-size: 1.5em
+    font-weight: bold
+    letter-spacing: 0.1em
+    text-transform: uppercase
+  p
+    font-weight: medium
+    line-height: 1.5em
+    margin-bottom: 1.5em
+  span
+    font-weight: 400
+
+// section button
+.s-button
+  display: block
+  padding: 0.8em 1.2em
+  margin: 3em auto 15vh
+  font-family: montserrat
+  font-weight: bold
+  font-size: 1.1em
+  letter-spacing: 0.2em
+  text-transform: uppercase
+  border: 2px solid #000
+  border-radius: 5px
+  background-color: #fff
+  cursor: pointer
+  &:hover
+    background-color: $blue
+
+@keyframes r-open
+  from
+    opacity:  0
+  to
+    opacity: 1
+
+@keyframes r-close
+  from
+    opacity:  1
+  to
+    opacity: 0
+
 
   /* ==========   S - QUOTE OF THE DAY  =========== */
 
-  //block position in the grid
+  //position in the grid
 .grid_item-5
   grid-column: 1/-1
   grid-row: 5/6
@@ -653,7 +761,12 @@ body
         background-color: $blue
 
 
-
+.psd
+  position: fixed
+  bottom: 0
+  opacity: .1
+  text-decoration: none
+  font-size: 14px
 
 
 @import "media" // Всегда в конце
