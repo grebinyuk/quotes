@@ -6,7 +6,7 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-   <!-- <link rel="stylesheet" href="./css/style.css">  -->
+
 
 
   <!-- Chrome, Firefox OS and Opera -->
@@ -216,6 +216,9 @@
 
       </section>
 
+
+
+
         <!-- ==========   S - QUOTE OF THE DAY  =========== -->
 
       <section class="grid_item-5 s-quote-day">
@@ -231,9 +234,48 @@
 
 
 
-      <section class="grid_item-6 s-posters">
+<!-- ==========   S - POSTERS  =========== -->
 
+      <section class="grid_item-6 s-posters">
+        <h2 class="s-title">By Poster Print</h2>
+
+        <div class="posters-container">
+            <div class="poster-item-1 posters hover-buy">
+              <img src="<%=require('./img/photo/img11.jpg')%>" alt="Щось трапилось!">
+              <div class="poster-title"><h2>STAY <br> TRUE, <br> STAY <br> GENTLEMAN</h2></div>
+              <a href="#" class="buy">buy now</a>
+              <a href="#" class="share">share<i class="fa fa-share"></i></a>
+            </div>
+
+            <div class="poster-item-2 posters hover-buy">
+              <img src="<%=require('./img/photo/Layer2.png')%>" alt="Щось трапилось!">
+              <div class="poster-title"><p><cite>And muse of nature <br> with a poet's eye</cite></p>
+              <p>Tomas Campbell</p></div>
+              <a href="#" class="buy">buy now</a>
+              <a href="#" class="share">share<i class="fa fa-share"></i></a>
+            </div>
+
+            <div class="poster-item-3 posters hover-buy">
+              <img src="<%=require('./img/photo/Layer3.png')%>" alt="Щось трапилось!">
+              <div class="poster-title"><h2>make work <br> fun & play</h2></div>
+              <a href="#" class="buy">buy now</a>
+              <a href="#" class="share">share<i class="fa fa-share"></i></a>
+            </div>
+
+            <div class="poster-item-4 posters hover-buy">
+              <img src="<%=require('./img/photo/Layer5.png')%>" alt="Щось трапилось!">
+              <div class="poster-title"><h2>silence is <span>golden</span></h2></div>
+              <a href="#" class="buy">buy now</a>
+              <a href="#" class="share">share<i class="fa fa-share"></i></a>
+            </div>
+
+
+        </div>
+
+        <button type="button" name="button" id="btn-browse" class="s-button">Browse posters</button>
       </section>
+
+
 
       <!-- ==========  FOOTER  =========== -->
 

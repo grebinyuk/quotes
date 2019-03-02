@@ -30,7 +30,12 @@ body
 	text-transform: uppercase
 
 
-            /* ==========  PRELOADER =========== */
+
+/* --------------------------------------
+
+              PRELOADER
+
+ -----------------------------------------*/
 
 @mixin opacity($opacity)
 	opacity: $opacity / 100
@@ -83,20 +88,65 @@ body
 
 
 
+/*------   section button  -------*/
+
+.s-button
+  display: block
+  padding: 0.8em 1.2em
+  margin: 3em auto 15vh
+  font-family: montserrat
+  font-weight: bold
+  font-size: 1.1em
+  letter-spacing: 0.2em
+  text-transform: uppercase
+  border: 2px solid #000
+  border-radius: 5px
+  background-color: #fff
+  cursor: pointer
+  &:hover
+    background-color: $blue
 
 
 
-// initialisation the grid
+/*------   style for section title   -------*/
+
+.s-title
+  position: relative
+  font-family: raleway
+  font-weight: bold
+  font-size: 3.75em
+  line-height: 1.92em
+  margin: 2em 0 0 $default-margin
+  transition: All 0.8s ease
+  &::after
+    content: ""
+    position: absolute
+    bottom: -0.2em
+    left: 0
+    width: 2em
+    height: 2px
+    background-color: grey
+
+
+
+// initialis the grid
 .wrapper
   display: grid
   grid-template-columns: 1fr 1fr
   grid-template-rows: auto repeat(6, auto) auto
+  max-width: 1920px
+  margin: 0 auto
 
 
 
-    /* ==========  HEADER  =========== */
 
-    //block position in the grid
+// /*--------------------------------------
+//
+//                // HEADER
+//
+//  -----------------------------------------*/
+
+// position in the grid
 .grid_item-1
   grid-column: 1/-1
   grid-row: 1/2
@@ -237,7 +287,11 @@ body
 
 
 
-    /* ==========  HEADER SLIDER  =========== */
+/* --------------------------------------
+
+               HEADER SLIDER
+
+ -----------------------------------------*/
 
 // position in the grid
 .grid_item-2
@@ -291,7 +345,7 @@ body
       background-color: white
 
 
-/*== SLIDE 1 AND 3 ==*/
+                              /*== SLIDE 1 AND 3 ==*/
 
 .h__slide-1
   justify-content: flex-end
@@ -319,8 +373,7 @@ body
       font-weight: bold
       text-transform: lowercase
 
-/*== SLIDE 2 AND 5 ==*/
-
+                                /*== SLIDE 2 AND 5 ==*/
 .h__slide-2
   justify-content: flex-start
   align-items: flex-start
@@ -343,8 +396,7 @@ body
       font-size: 2em
 
 
-/*== SLIDE 4 ==*/
-
+                          /*== SLIDE 4 ==*/
 .h__slide-4
   justify-content: space-around
   align-items: center
@@ -367,8 +419,6 @@ body
   animation-name: fade
   animation-duration: 1.5s
 
-
-
 @keyframes fade
   from
     opacity:  0.4
@@ -376,10 +426,13 @@ body
     opacity: 1
 
 
+/* --------------------------------------
 
-      ///* ==========    S - QUOTES  =========== */
+               S - QUOTES
 
-  //block position in the grid
+ -----------------------------------------*/
+
+//block position in the grid
 .grid_item-3
   grid-column: 1/-1
   grid-row: 3/4
@@ -451,7 +504,11 @@ body
 
 
 
-  /* ==========   S - REASONS  =========== */
+/* --------------------------------------
+
+               S - REASONS
+
+ -----------------------------------------*/
 
 //position in the grid
 .grid_item-4
@@ -467,24 +524,6 @@ body
   h1,p
     // margin: 0
     padding: 0
-
-  // style for section title
-.s-title
-  position: relative
-  font-family: raleway
-  font-weight: bold
-  font-size: 3.75em
-  line-height: 1.92em
-  margin: 2em 0 0 $default-margin
-  transition: All 0.8s ease
-  &::after
-    content: ""
-    position: absolute
-    bottom: -0.2em
-    left: 0
-    width: 2em
-    height: 2px
-    background-color: grey
 
 
 .reasons-box
@@ -538,22 +577,7 @@ body
   span
     font-weight: 400
 
-// section button
-.s-button
-  display: block
-  padding: 0.8em 1.2em
-  margin: 3em auto 15vh
-  font-family: montserrat
-  font-weight: bold
-  font-size: 1.1em
-  letter-spacing: 0.2em
-  text-transform: uppercase
-  border: 2px solid #000
-  border-radius: 5px
-  background-color: #fff
-  cursor: pointer
-  &:hover
-    background-color: $blue
+
 
 @keyframes r-open
   from
@@ -568,9 +592,14 @@ body
     opacity: 0
 
 
-  /* ==========   S - QUOTE OF THE DAY  =========== */
 
-  //position in the grid
+/* --------------------------------------
+
+               S - QUOTE OF THE DAY
+
+ -----------------------------------------*/
+
+//position in the grid
 .grid_item-5
   grid-column: 1/-1
   grid-row: 5/6
@@ -612,20 +641,198 @@ body
 
 
 
+/* --------------------------------------
 
-                  /* ===========  S - POSTERS  =========== */
+              S - POSTERS
 
-      //block position in the grid
+ -----------------------------------------*/
+
+// position in the grid
 .grid_item-6
   grid-column: 1/-1
   grid-row: 6/7
   z-index: 1
 
 
+.s-posters
+  position: relative
+  width: 100%
+  max-height: auto
+  background-color: #eaeef1
+  min-height: 480px
+  min-width: 320px
 
-                  /* ==========  FOOTER  =========== */
 
-  // position in the grid
+.posters-container
+  width: 100%
+  max-width: 1600px
+  min-height: 350px
+  height: 55vw
+  max-height: 860px
+  display: grid
+  grid-template-columns: minmax(250px, 560px) minmax(150px, 330px) minmax(150px, 330px)
+  grid-column-gap: 5%
+  grid-row-gap: 5.81%
+  grid-auto-rows: minmax(170px, 355px)
+  padding: 100px 6vw  0 6vw
+  margin: 0 auto
+
+.s-button
+  margin-top: 5em
+    //загальні стилі для всіх постерів
+.posters
+  display: block
+  position: relative
+  opacity: 0.8
+  img
+    width: 100%
+    height: 100%
+  .poster-title
+    position: absolute
+
+    //POSTER 1
+.poster-item-1
+  position: relative
+  width: 100%
+  max-width: 560px
+  height: 100%
+  max-height: 760px
+  background-color: red
+  grid-row-end: span 2
+  .poster-title
+    top: 10%
+    left: 50%
+    color: white
+    h2
+      position: relative
+      left: -50%
+      font-family: 'TwCenMTCondensed'
+      font-size: 4.5em
+      font-weight: bold
+      line-height: 1.2
+      text-align: center
+      letter-spacing: 0.1em
+
+// POSTER 2
+.poster-item-2
+  position: relative
+  width: 100%
+  max-width: 740px
+  height: 100%
+  max-height: 370px
+  background-color: green
+  grid-column-end: span 2
+  .poster-title
+    display: inline-block
+    left: 10%
+    top: 15%
+    color: black
+    p
+      cite
+        margin: 0
+        font-family: 'TimesNewRoman'
+        font-weight: bold
+        font-size: 2.25rem
+      &:last-child
+        margin-top: 0rem
+        font-family: Georgia cursive
+        font-weight: 400
+        font-size: 1.2rem
+
+//POSTER 3
+.poster-item-3
+  width: 100%
+  max-width: 330px
+  height: 100%
+  max-height: 340px
+  background-color: black
+  grid-row-start: 2
+  grid-column-start: 2
+  .poster-title
+    display: inline-block
+    left: 50%
+    color: black
+    h2
+      position: relative
+      left: -50%
+      font-family: 'GreatLakesNF', sans-serif
+      font-size: 1.8em
+      letter-spacing: 0.1em
+      line-height: 1.5
+
+
+//POSTER 4
+.poster-item-4
+  position: relative
+  width: 100%
+  max-width: 330px
+  height: 100%
+  max-height: 340px
+  background-color: yellow
+  grid-row-start: 2
+  grid-column-start: 3
+  justify-self: end
+  .poster-title
+    display: inline-block
+    left: 50%
+    top: 40%
+    color: white
+    text-align: center
+    h2
+      position: relative
+      left: -50%
+      font-family: 'Lato', sans-serif
+      font-size: 1.875rem
+      letter-spacing: 0.1em
+      line-height: 1.2
+    span
+      font-family: 'LatoBlack', sans-serif
+      text-transform: uppercase
+      font-weight: bold
+      font-size: 2.3rem
+
+.hover-buy:hover
+  box-shadow: 0px 0px 100px 0px #5f5d5d
+  opacity: 1
+  .buy, .share
+    display: block
+
+.buy, .share
+  display: none
+  position: absolute
+  text-transform: uppercase
+  bottom: 3%
+  font-family: 'montserrat'
+  letter-spacing: 0.2em
+  font-weight: bold
+  text-decoration: none
+  color: #fff
+  cursor: pointer
+
+.buy
+  left: 6%
+  font-size: 1.25rem
+.share
+  right: 6%
+  font-size: 1rem
+  i
+    margin-left: 0.3em
+
+.hover-buy:hover
+  .buy:hover
+    color: #000
+  .share:hover
+    color: #000
+
+
+/* --------------------------------------
+
+              FOOTER
+
+ -----------------------------------------*/
+
+
+// position in the grid
 .grid_item-7
   grid-column: 1/-1
   grid-row: 7/8

@@ -20,6 +20,13 @@
   src: url(fonts/RalewayBold.eot?#iefix) format("embedded-opentype"), url(fonts/RalewayBold.woff) format("woff"), url(fonts/RalewayBold.ttf) format("truetype"); }
 
 @font-face {
+  font-family: "raleway";
+  font-weight: medium;
+  font-style: normal;
+  src: url(fonts/RalewayMedium.eot);
+  src: url(fonts/RalewayMedium.eot?#iefix) format("embedded-opentype"), url(fonts/RalewayMedium.woff) format("woff"), url(fonts/RalewayMedium.ttf) format("truetype"); }
+
+@font-face {
   font-family: "montserrat";
   font-weight: 100;
   font-style: normal;
@@ -39,6 +46,34 @@
   font-style: normal;
   src: url(fonts/MontserratBold.eot);
   src: url(fonts/MontserratBold.eot?#iefix) format("embedded-opentype"), url(fonts/MontserratBold.woff) format("woff"), url(fonts/MontserratBold.ttf) format("truetype"); }
+
+@font-face {
+  font-family: "TwCenMTCondensed";
+  font-weight: bold;
+  font-style: normal;
+  src: url(fonts/TwCenMTCondensedBold.eot);
+  src: url(fonts/TwCenMTCondensedBold.eot?#iefix) format("embedded-opentype"), url(fonts/TwCenMTCondensedBold.woff) format("woff"), url(fonts/TwCenMTCondensedBold.ttf) format("truetype"); }
+
+@font-face {
+  font-family: "GreatLakesNF";
+  font-weight: bold;
+  font-style: normal;
+  src: url(fonts/GreatLakesNF.eot);
+  src: url(fonts/GreatLakesNF.eot?#iefix) format("embedded-opentype"), url(fonts/GreatLakesNF.woff) format("woff"), url(fonts/GreatLakesNF.ttf) format("truetype"); }
+
+@font-face {
+  font-family: "Lato";
+  font-weight: bold;
+  font-style: normal;
+  src: url(fonts/LatoBold.eot);
+  src: url(fonts/LatoBold.eot?#iefix) format("embedded-opentype"), url(fonts/LatoBold.woff) format("woff"), url(fonts/LatoBold.ttf) format("truetype"); }
+
+@font-face {
+  font-family: "Lato";
+  font-weight: 300;
+  font-style: normal;
+  src: url(fonts/LatoBlack.eot);
+  src: url(fonts/LatoBlack.eot?#iefix) format("embedded-opentype"), url(fonts/LatoBlack.woff) format("woff"), url(fonts/LatoBlack.ttf) format("truetype"); }
 
 @font-face {
   font-family: 'font-awesome';
@@ -4380,9 +4415,13 @@ body {
 
 .h1, .h2, .h3, .h4, .h5, .h6 {
   line-height: 1.4;
-  text-transform: uppercase;
-  /* ==========  PRELOADER =========== */ }
+  text-transform: uppercase; }
 
+/* --------------------------------------
+
+              PRELOADER
+
+ -----------------------------------------*/
 .preloader {
   position: fixed;
     position-overflow: hidden;
@@ -4459,11 +4498,48 @@ body {
     -webkit-transform: scale(1);
             transform: scale(1); } }
 
+/*------   section button  -------*/
+.s-button {
+  display: block;
+  padding: 0.8em 1.2em;
+  margin: 3em auto 15vh;
+  font-family: montserrat;
+  font-weight: bold;
+  font-size: 1.1em;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 2px solid #000;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer; }
+  .s-button:hover {
+    background-color: #3e65e3; }
+
+/*------   style for section title   -------*/
+.s-title {
+  position: relative;
+  font-family: raleway;
+  font-weight: bold;
+  font-size: 3.75em;
+  line-height: 1.92em;
+  margin: 2em 0 0 10vw;
+  -webkit-transition: All 0.8s ease;
+  transition: All 0.8s ease; }
+  .s-title::after {
+    content: "";
+    position: absolute;
+    bottom: -0.2em;
+    left: 0;
+    width: 2em;
+    height: 2px;
+    background-color: grey; }
+
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto repeat(6, auto) auto;
-  /* ==========  HEADER  =========== */ }
+  max-width: 1920px;
+  margin: 0 auto; }
 
 .grid_item-1 {
   grid-column: 1/-1;
@@ -4548,19 +4624,17 @@ body {
     -webkit-transition: 0.2s;
     transition: 0.2s; }
 
-.hamburger:hover {
-  color: red; }
-
-.close-nav .buttom-text span {
-  -webkit-transform: translateY(15px);
-          transform: translateY(15px); }
-
-.close-nav .buttom-text::before {
-  -webkit-transform: rotate(40deg);
-          transform: rotate(40deg); }
-
-.close-nav .buttom-text::after {
-  opacity: 0; }
+.close-nav {
+  position: fixed;
+  right: 10vw; }
+  .close-nav .buttom-text span {
+    -webkit-transform: translateY(15px);
+            transform: translateY(15px); }
+  .close-nav .buttom-text::before {
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg); }
+  .close-nav .buttom-text::after {
+    opacity: 0; }
 
 .close-nav .hamburger-button::before {
   opacity: 1;
@@ -4604,9 +4678,13 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  opacity: 0.92;
-  /* ==========  HEADER SLIDER  =========== */ }
+  opacity: 0.92; }
 
+/* --------------------------------------
+
+               HEADER SLIDER
+
+ -----------------------------------------*/
 .grid_item-2 {
   grid-column: 1/-1;
   grid-row: 1/3;
@@ -4654,9 +4732,9 @@ body {
       background-color: white;
       cursor: pointer; }
   .h-slider .h-slider__nav .dot_active {
-    background-color: white; }
+    background-color: white;
+    /*== SLIDE 1 AND 3 ==*/ }
 
-/*== SLIDE 1 AND 3 ==*/
 .h__slide-1 {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
@@ -4685,9 +4763,9 @@ body {
       letter-spacing: 0.3em;
       font-size: 2em;
       font-weight: bold;
-      text-transform: lowercase; }
+      text-transform: lowercase;
+      /*== SLIDE 2 AND 5 ==*/ }
 
-/*== SLIDE 2 AND 5 ==*/
 .h__slide-2 {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
@@ -4711,9 +4789,9 @@ body {
       margin-top: 0.5em;
       font-family: Georgia cursive;
       font-weight: regular;
-      font-size: 2em; }
+      font-size: 2em;
+      /*== SLIDE 4 ==*/ }
 
-/*== SLIDE 4 ==*/
 .h__slide-4 {
   -ms-flex-pack: distribute;
       justify-content: space-around;
@@ -4751,6 +4829,11 @@ body {
   to {
     opacity: 1; } }
 
+/* --------------------------------------
+
+               S - QUOTES
+
+ -----------------------------------------*/
 .grid_item-3 {
   grid-column: 1/-1;
   grid-row: 3/4;
@@ -4815,12 +4898,113 @@ body {
   background-size: cover;
   background-repeat: no-repeat; }
 
+/* --------------------------------------
+
+               S - REASONS
+
+ -----------------------------------------*/
 .grid_item-4 {
   grid-column: 1/-1;
   grid-row: 4/5;
-  z-index: 1;
-  /* ==========   S - QUOTE OF THE DAY  =========== */ }
+  z-index: 1; }
 
+.s-happy-reasons {
+  width: 100%;
+  height: auto;
+  min-height: 480px;
+  min-width: 320px; }
+  .s-happy-reasons h1, .s-happy-reasons p {
+    padding: 0; }
+
+.reasons-box {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 8em 10vw 0 10vw;
+  position: relative;
+  overflow: hidden;
+  width: 80%;
+  height: auto;
+  min-height: 480px; }
+
+.reasons {
+  display: none;
+  opacity: 0;
+  position: relative;
+  width: 50%;
+  height: 17.5em;
+  padding: 3em;
+  border: solid 1px #f6f6f6;
+  font-family: raleway, arial;
+  font-size: 1.1em;
+  -webkit-transition: opacity 0.8s ease;
+  transition: opacity 0.8s ease;
+  -webkit-animation: r-close .8s ease;
+          animation: r-close .8s ease; }
+  .reasons:not(:first-child) {
+    margin-top: -1px; }
+  .reasons:nth-child(2) {
+    margin-top: 0; }
+  .reasons:nth-child(2n) {
+    margin-left: -1px; }
+
+.r-active {
+  display: block;
+  opacity: 1;
+  -webkit-animation: r-open .8s ease;
+          animation: r-open .8s ease; }
+
+.reasons h2 {
+  margin: 0 0 1.3em 0;
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase; }
+
+.reasons p {
+  font-weight: medium;
+  line-height: 1.5em;
+  margin-bottom: 1.5em; }
+
+.reasons span {
+  font-weight: 400; }
+
+@-webkit-keyframes r-open {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes r-open {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@-webkit-keyframes r-close {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@keyframes r-close {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+/* --------------------------------------
+
+               S - QUOTE OF THE DAY
+
+ -----------------------------------------*/
 .grid_item-5 {
   grid-column: 1/-1;
   grid-row: 5/6;
@@ -4863,15 +5047,188 @@ body {
         font-weight: 400;
         font-size: 1.1em; }
         .quote-day .quote-day_content p:last-child a {
-          color: #fff;
-          /* ===========  S - POSTERS  =========== */ }
+          color: #fff; }
 
+/* --------------------------------------
+
+              S - POSTERS
+
+ -----------------------------------------*/
 .grid_item-6 {
   grid-column: 1/-1;
   grid-row: 6/7;
-  z-index: 1;
-  /* ==========  FOOTER  =========== */ }
+  z-index: 1; }
 
+.s-posters {
+  position: relative;
+  width: 100%;
+  max-height: auto;
+  background-color: #eaeef1;
+  min-height: 480px;
+  min-width: 320px; }
+
+.posters-container {
+  width: 100%;
+  max-width: 1600px;
+  min-height: 350px;
+  height: 55vw;
+  max-height: 860px;
+  display: grid;
+  grid-template-columns: minmax(250px, 560px) minmax(150px, 330px) minmax(150px, 330px);
+  grid-column-gap: 5%;
+  grid-row-gap: 5.81%;
+  grid-auto-rows: minmax(170px, 355px);
+  padding: 100px 6vw  0 6vw;
+  margin: 0 auto; }
+
+.s-button {
+  margin-top: 5em; }
+
+.posters {
+  display: block;
+  position: relative;
+  opacity: 0.8; }
+  .posters img {
+    width: 100%;
+    height: 100%; }
+  .posters .poster-title {
+    position: absolute; }
+
+.poster-item-1 {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  height: 100%;
+  max-height: 760px;
+  background-color: red;
+  grid-row-end: span 2; }
+  .poster-item-1 .poster-title {
+    top: 10%;
+    left: 50%;
+    color: white; }
+    .poster-item-1 .poster-title h2 {
+      position: relative;
+      left: -50%;
+      font-family: 'TwCenMTCondensed';
+      font-size: 4.5em;
+      font-weight: bold;
+      line-height: 1.2;
+      text-align: center;
+      letter-spacing: 0.1em; }
+
+.poster-item-2 {
+  position: relative;
+  width: 100%;
+  max-width: 740px;
+  height: 100%;
+  max-height: 370px;
+  background-color: green;
+  grid-column-end: span 2; }
+  .poster-item-2 .poster-title {
+    display: inline-block;
+    left: 10%;
+    top: 15%;
+    color: black; }
+    .poster-item-2 .poster-title p cite {
+      margin: 0;
+      font-family: 'TimesNewRoman';
+      font-weight: bold;
+      font-size: 2.25rem; }
+    .poster-item-2 .poster-title p:last-child {
+      margin-top: 0rem;
+      font-family: Georgia cursive;
+      font-weight: 400;
+      font-size: 1.2rem; }
+
+.poster-item-3 {
+  width: 100%;
+  max-width: 330px;
+  height: 100%;
+  max-height: 340px;
+  background-color: black;
+  grid-row-start: 2;
+  grid-column-start: 2; }
+  .poster-item-3 .poster-title {
+    display: inline-block;
+    left: 50%;
+    color: black; }
+    .poster-item-3 .poster-title h2 {
+      position: relative;
+      left: -50%;
+      font-family: 'GreatLakesNF', sans-serif;
+      font-size: 1.8em;
+      letter-spacing: 0.1em;
+      line-height: 1.5; }
+
+.poster-item-4 {
+  position: relative;
+  width: 100%;
+  max-width: 330px;
+  height: 100%;
+  max-height: 340px;
+  background-color: yellow;
+  grid-row-start: 2;
+  grid-column-start: 3;
+  justify-self: end; }
+  .poster-item-4 .poster-title {
+    display: inline-block;
+    left: 50%;
+    top: 40%;
+    color: white;
+    text-align: center; }
+    .poster-item-4 .poster-title h2 {
+      position: relative;
+      left: -50%;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.875rem;
+      letter-spacing: 0.1em;
+      line-height: 1.2; }
+    .poster-item-4 .poster-title span {
+      font-family: 'LatoBlack', sans-serif;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 2.3rem; }
+
+.hover-buy:hover {
+  -webkit-box-shadow: 0px 0px 100px 0px #5f5d5d;
+          box-shadow: 0px 0px 100px 0px #5f5d5d;
+  opacity: 1; }
+  .hover-buy:hover .buy, .hover-buy:hover .share {
+    display: block; }
+
+.buy, .share {
+  display: none;
+  position: absolute;
+  text-transform: uppercase;
+  bottom: 3%;
+  font-family: 'montserrat';
+  letter-spacing: 0.2em;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer; }
+
+.buy {
+  left: 6%;
+  font-size: 1.25rem; }
+
+.share {
+  right: 6%;
+  font-size: 1rem; }
+  .share i {
+    margin-left: 0.3em; }
+
+.hover-buy:hover .buy:hover {
+  color: #000; }
+
+.hover-buy:hover .share:hover {
+  color: #000; }
+
+/* --------------------------------------
+
+              FOOTER
+
+ -----------------------------------------*/
 .grid_item-7 {
   grid-column: 1/-1;
   grid-row: 7/8;
@@ -5002,6 +5359,13 @@ body {
       .subscribe form button:hover {
         background-color: #3e65e3; }
 
+.psd {
+  position: fixed;
+  bottom: 0;
+  opacity: .1;
+  text-decoration: none;
+  font-size: 14px; }
+
 /*==========  Desktop First  ==========*/
 /* Large Devices, Wide Screens */
 @media only screen and (max-width: 1200px) {
@@ -5016,6 +5380,38 @@ body {
       margin-top: 1.8em; }
   .photo-box {
     background-position: 50%;
+    /* ==========   S - REASONS  =========== */ }
+  .s-title {
+    font-size: 2.5em;
+    margin-top: 1em; }
+  .reasons-box {
+    margin-top: 5em; }
+  .reasons {
+    padding: 2em;
+    height: 15em;
+    /* ==========   S - POSTERS  =========== */ }
+  .poster-item-1 .poster-title {
+    top: 10%;
+    left: 50%;
+    color: white; }
+    .poster-item-1 .poster-title h2 {
+      font-size: 3.8em; }
+  .poster-item-2 .poster-title p cite {
+    font-size: 2rem; }
+  .poster-item-2 .poster-title p:last-child {
+    font-size: 1rem; }
+  .poster-item-3 .poster-title h2 {
+    font-size: 1.2em; }
+  .poster-item-4 .poster-title h2 {
+    font-size: 1.8rem; }
+  .poster-item-4 .poster-title span {
+    font-size: 2.1rem; }
+  .buy {
+    font-size: 1rem;
+    letter-spacing: 0.1em; }
+  .share {
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
     /* ==========  FOOTER  =========== */ }
   .my_footer {
     font-size: 0.8em; }
@@ -5030,9 +5426,36 @@ body {
     top: 12%;
     line-height: 1.5em;
     font-size: 1.4em;
-    /* ==========  FOOTER  =========== */ }
+    /* ==========   S - REASONS  =========== */ }
     .quote-box .quote-inner .q-autor {
       margin-top: 1.4em; }
+  .reasons {
+    width: 50%;
+    font-size: 1em;
+    padding: 1.5em;
+    height: 15em;
+    /* ==========   S - POSTERS  =========== */ }
+    .reasons h2 {
+      font-size: 1.2em; }
+    .reasons p {
+      line-height: 1.3em; }
+  .poster-item-1 .poster-title h2 {
+    font-size: 2.8em; }
+  .poster-item-2 .poster-title p cite {
+    font-size: 1.7rem; }
+  .poster-item-2 .poster-title:last-child {
+    font-size: 0.9rem; }
+  .poster-item-3 .poster-title h2 {
+    font-size: 0.9em; }
+  .poster-item-4 .poster-title h2 {
+    font-size: 1.4rem; }
+  .poster-item-4 .poster-title span {
+    font-size: 1.6rem; }
+  .buy {
+    font-size: 0.85rem; }
+  .share {
+    font-size: 0.65rem;
+    /* ==========  FOOTER  =========== */ }
   .my_footer .social {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -5062,6 +5485,8 @@ body {
     padding: 5vw 15vw 0; }
     .my_header .hamburger {
       margin-top: 2.2vw; }
+  .close-nav {
+    right: 15vw; }
   #hamburger-menu {
     font-size: 2.5em;
     /* ==========  HEADER SLIDER  =========== */ }
@@ -5092,16 +5517,88 @@ body {
     letter-spacing: 0.07em;
     font-size: 1.8em;
     /* ==========  S - QUOTES  =========== */ }
-  .quote-box .quote-inner {
-    top: 9%;
-    line-height: 1.4em;
-    font-size: 1.3em; }
-    .quote-box .quote-inner .q-autor {
-      margin-top: 1.3em;
-      /* ==========  S - QUOTE OF THE DAY  =========== */ }
-  .quote-day .quote-day_content p {
-    font-size: 2em;
-    /* ==========  FOOTER  =========== */ }
+  .quote-box {
+    /* ==========   S - REASONS  =========== */ }
+    .quote-box .quote-inner {
+      top: 9%;
+      line-height: 1.4em;
+      font-size: 1.3em; }
+      .quote-box .quote-inner .q-autor {
+        margin-top: 1.3em; }
+  .s-title {
+    font-size: 2.5em;
+    margin-top: 1.2em; }
+  .reasons-box {
+    margin-top: 3em;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .reasons {
+    width: 80%;
+    font-size: 0.8em;
+    height: auto; }
+    .reasons:nth-child(2) {
+      margin-top: -1px; }
+    .reasons:nth-child(2n) {
+      margin-left: 0; }
+    .reasons span {
+      margin-bottom: 1em; }
+  .s-button {
+    font-size: 0.92em;
+    letter-spacing: 0.1em;
+    padding: 0.5em 1em;
+    margin: 3em auto 10vh;
+    /* ==========  S - QUOTE OF THE DAY  =========== */ }
+  .quote-day {
+    /* ==========    S - POSTERS  =========== */ }
+    .quote-day .quote-day_content p {
+      font-size: 2em; }
+  .posters-container {
+    padding-top: 60px;
+    margin: 0 auto;
+    display: inline-block; }
+  .posters {
+    display: relative;
+    min-width: 120px;
+    width: 70vw;
+    margin: 10px auto;
+    min-height: 120px;
+    height: 70vw;
+    max-height: 100vw; }
+    .posters .poster-title {
+      position: absolute; }
+  .poster-item-1 {
+    min-width: 200px;
+    width: 65vw;
+    min-height: 250px;
+    height: 90vw; }
+    .poster-item-1 .poster-title h2 {
+      font-size: 2.9em; }
+  .poster-item-2 {
+    min-width: 280px;
+    width: 87vw;
+    height: 45vw !important; }
+    .poster-item-2 .poster-title p cite {
+      font-size: 2rem; }
+    .poster-item-2 .poster-title p:last-child {
+      font-size: 1.1rem; }
+  .poster-item-3 {
+    display: inline-block;
+    margin-right: 2%;
+    width: 48%;
+    height: 51vw; }
+    .poster-item-3 .poster-title h2 {
+      font-size: 1.15em; }
+  .poster-item-4 {
+    display: inline-block;
+    margin-left: 2%;
+    width: 48%;
+    height: 51vw; }
+    .poster-item-4 .poster-title h2 {
+      font-size: 1.4rem; }
+    .poster-item-4 .poster-title span {
+      font-size: 1.72rem;
+      /* ==========  FOOTER  =========== */ }
   .my_footer {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -5140,9 +5637,9 @@ body {
             justify-content: center;
     background-position: 20%; }
     .h__slide-1 .slide-1_content h1 {
-      font-size: 5em; }
+      font-size: 4.72em; }
     .h__slide-1 .slide-1_content p {
-      font-size: 1.5em;
+      font-size: 1.45em;
       letter-spacing: 0.1em; }
   /*  SLIDE 2 AND 5 */
   .h__slide-2 {
@@ -5171,9 +5668,48 @@ body {
       .quote-box .quote-inner .q-autor {
         margin-top: 2em; }
   .photo-box {
-    display: block;
+    display: none;
     background-position: 80%;
+    width: 100%; }
+  .s-title {
+    font-size: 1.65em;
+    margin-top: 1.2em; }
+  .reasons-box {
+    margin-top: 2.5em; }
+  .reasons {
     width: 100%;
+    font-size: 0.8em; }
+    .reasons span {
+      margin-bottom: 1em; }
+  .s-button {
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+    padding: 0.5em 0.8em;
+    margin: 2em auto 8vh; }
+  /* ==========  S - QUOTE OF THE DAY  =========== */
+  .quote-day {
+    /* ==========    S - POSTERS  =========== */ }
+    .quote-day .quote-day_content p {
+      font-size: 1.5em; }
+      .quote-day .quote-day_content p:last-child {
+        font-size: 0.9em;
+        margin-top: 1.7em; }
+  .poster-item-1 .poster-title h2 {
+    font-size: 1.85em; }
+  .poster-item-2 .poster-title p cite {
+    font-size: 1.3rem; }
+  .poster-item-2 .poster-title p:last-child {
+    font-size: 0.8rem; }
+  .poster-item-3 .poster-title h2 {
+    font-size: 0.75em; }
+  .poster-item-4 .poster-title h2 {
+    font-size: 1rem; }
+  .poster-item-4 .poster-title span {
+    font-size: 1.09rem; }
+  .buy {
+    font-size: 0.7rem; }
+  .share {
+    font-size: 0.5rem;
     /* ==========  FOOTER  =========== */ }
   .my_footer {
     -webkit-box-orient: vertical;
@@ -5220,7 +5756,7 @@ body {
         -ms-flex-pack: center;
             justify-content: center; }
     .h__slide-1 .slide-1_content {
-      padding-left: 5vw; }
+      padding-left: 4vw; }
   /*  SLIDE 2 AND 5 */
   .h__slide-2 {
     background-position: right; }
@@ -5237,7 +5773,7 @@ body {
         letter-spacing: 0.08em;
         font-size: 1.6em; }
   .quote-day .quote-day_content p {
-    font-size: 1.7em; }
+    font-size: 1.2em; }
     .quote-day .quote-day_content p:last-child {
-      font-size: 0.8em; } }
+      font-size: 0.7em; } }
 

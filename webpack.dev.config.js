@@ -47,8 +47,8 @@ const autoprefixer = require('autoprefixer');
                   sourceMap: true
                 }
               }
-    ]
-  },
+            ]
+          }
       ]
   },
 
